@@ -9,3 +9,21 @@ const fileNames = [
 
 // do not change the code above
 // add your code here
+
+const fetchFiles = async()=>{
+
+	try {
+		const resp = await fetch(file);
+		const data - await resp.text();
+
+		console.log(data);
+	} catch (error) {
+
+		console.log(error);
+	}
+	
+}
+
+fileNames.forEach((file)=>{
+	fetchFiles(file);
+})
