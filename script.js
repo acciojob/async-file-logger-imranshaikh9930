@@ -9,21 +9,20 @@ const fileNames = [
 
 // do not change the code above
 // add your code here
-
-const fetchFiles = async()=>{
-
-	try {
-		const resp = await fetch(file);
-		const data - await resp.text();
-
-		console.log(data);
-	} catch (error) {
-
-		console.log(error);
-	}
-	
+async function fetchFileContent(file) {
+    try {
+        const response = await fetch(file);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const text = await response.text();
+        console.log(`Content of ${file}: ${text}`);
+    } catch (error) {
+        console.error(`Failed to fetch ${file}: ${error.message}`);
+    }
 }
 
-fileNames.forEach((file)=>{
-	fetchFiles(file);
-})
+// Iterate over the array of files and fetch data from each file
+files.forEach(file => {
+    fetchFileContent(file);
+});
