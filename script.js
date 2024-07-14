@@ -9,6 +9,7 @@ const fileNames = [
 
 // do not change the code above
 // add your code here
+
 async function fetchFileContent(file) {
     try {
         const response = await fetch(file);
@@ -22,7 +23,7 @@ async function fetchFileContent(file) {
     }
 }
 
-// Iterate over the array of files and fetch data from each file
-files.forEach(file => {
-    fetchFileContent(file);
-});
+
+fileNames.forEach((file)=>{
+	fetchFileContent(file);
+})
